@@ -1,0 +1,36 @@
+body {
+    background-color: bisque;
+    padding-left: 50px;
+    padding-top: 30px;
+}
+
+h1 {
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blueviolet;
+    
+}
+
+#agregar-btn {
+    border-radius: 10px; 
+    background-color: #FF69B4; 
+    box-shadow: 4px 4px 8px 0px #000000; 
+    padding: 10px 20px; 
+    color: white;
+  }
+
+  #buscar-btn {
+    border-radius: 10px; 
+    background-color: #FF69B4; 
+    box-shadow: 4px 4px 8px 0px #000000; 
+    padding: 10px 20px; 
+    color: white;
+  }
+
+#eliminar-btn {
+    border-radius: 10px; 
+    background-color: #FF69B4; 
+    box-shadow: 4px 4px 8px 0px #000000; 
+    padding: 10px 20px; 
+    color: white;
+}

@@ -1,0 +1,18 @@
+[
+    {
+      "nombre": "Iphone XR",
+      "precio": 255000
+    },
+    {
+      "nombre": "Samsung s23 ultra",
+      "precio": 189000
+    },
+    {
+      "nombre": "Moto g52",
+      "precio": 136400
+    },
+    {
+      "nombre": "Moto g42",
+      "precio": 124000
+    }
+  ]
