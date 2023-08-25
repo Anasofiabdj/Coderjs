@@ -191,18 +191,17 @@ async function cargarProductos() {
 }
 
 function mostrarProductosEnHTML(productos) {
-  // Solo agregamos productos del JSON si no están en productosJSON
+  
   for (const producto of productos) {
     if (!productosJSON.some((p) => p.nombre === producto.nombre)) {
       productosJSON.push(producto);
     }
   }
 
-  // Guardamos todos los productos en el localStorage
+ 
   localStorage.setItem("productos", JSON.stringify(productosJSON.concat(productosAgregados)));
 
-  // Resto del código para mostrar productos y actualizar la lista
-  // ...
+  
 }
 
 async function main() {
