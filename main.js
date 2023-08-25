@@ -3,7 +3,7 @@ function Producto(nombre, precio) {
   this.precio = precio;
 }
 
-const productosJSON = JSON.parse(localStorage.getItem("productos")) || [];
+let productosJSON = JSON.parse(localStorage.getItem("productos")) || [];
 const productosAgregados = [];
 
 const listaProductos = document.getElementById("lista-productos");
@@ -63,7 +63,7 @@ function agregarElemento() {
       const producto = new Producto(nombre, precio);
 
       productosAgregados.push(producto);
-      localStorage.setItem("productos", JSON.stringify(productosAgregados.concat(productosJSON)));
+      localStorage.setItem("productos", JSON.stringify(productosJSON.concat(productosAgregados)));
 
       const listItem = document.createElement("li");
       listItem.textContent = `${nombre}: $${precio.toFixed(2)}`;
@@ -191,16 +191,18 @@ async function cargarProductos() {
 }
 
 function mostrarProductosEnHTML(productos) {
-  productosJSON.push(...productos); 
-  localStorage.setItem("productos", JSON.stringify(productosJSON.concat(productosAgregados))); 
-
+  // Solo agregamos productos del JSON si no están en productosJSON
   for (const producto of productos) {
-    const listItem = document.createElement("li");
-    listItem.textContent = `${producto.nombre}: $${producto.precio.toFixed(2)}`;
-    listaProductos.appendChild(listItem);
+    if (!productosJSON.some((p) => p.nombre === producto.nombre)) {
+      productosJSON.push(producto);
+    }
   }
 
-  actualizarLista();
+  // Guardamos todos los productos en el localStorage
+  localStorage.setItem("productos", JSON.stringify(productosJSON.concat(productosAgregados)));
+
+  // Resto del código para mostrar productos y actualizar la lista
+  // ...
 }
 
 async function main() {
